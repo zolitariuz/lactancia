@@ -1,0 +1,185 @@
+@import url('yui_base.css');
+@import url('yui_fonts.css');
+@import url('yui_reset.css');
+
+//---- FONT FACE ----//
+
+@font-face {
+    font-family: 'politica_italic';
+    src: url('fonts/politica_italic-webfont.eot');
+    src: url('fonts/politica_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/politica_italic-webfont.woff') format('woff'),
+         url('fonts/politica_italic-webfont.ttf') format('truetype'),
+         url('fonts/politica_italic-webfont.svg#politicaitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//---- VARIABLES ----//
+@rosa: #f1ddec;
+@rosa_obscuro: #9e0c54;
+
+@azul: #b7d8eb;
+@azul_claro : #09a5ff;
+@azul_obscuro: #054e96;
+
+@gris: #646464;
+@gris_claro: #d1d1d1;
+
+@cafe: #533429;
+
+//---- MIXINS ----//
+.pt_sans_bold{ font-family: 'PT Sans Narrow', sans-serif; font-weight: 700; }
+.pt_sans{ font-family: 'PT Sans Narrow', sans-serif; font-weight: 400; }
+.politica_italic{ font-family: 'politica_italic', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
+.georgia{ font-family:Georgia, "Times New Roman", Times, serif; font-weight: light; }
+.position{ position: relative; overflow: hidden;}
+.redondas{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+.sombra{
+	-moz-box-shadow:    -20px 24px 11px 2px rgba(68, 68, 68, 0.1);
+  	-webkit-box-shadow: -20px 24px 11px 2px rgba(68, 68, 68, 0.1);
+  	box-shadow:         -20px 24px 11px 2px rgba(68, 68, 68, 0.1);
+  }
+
+//---- NAV ----//
+
+.nav{ position: fixed; z-index: 1000; right: -100px; top: 35%; .georgia; font-style: italic; text-align: right;
+	ul{ list-style: none;
+		li{ cursor: pointer; margin-bottom: 5px;
+			&.dia{ width: 120px; height: 22px; margin: 5px 5px 5px 0px; background: url(images/tip.png) no-repeat 98px center; background-size: 20px; line-height: 20px;
+				a{ color: @rosa_obscuro; text-decoration: none; margin-right: 8px;
+					span{ color: @gris; margin-right: 10px; display: none; }
+				}
+				&:hover span{ display: inline; }
+				&:hover{ background: url(images/bg_azul.png) no-repeat 98px 0; background-size: 22px; font-weight: bold;
+					a{ color: #fff; }
+				}
+
+			}
+			&.me_uno{ background: url('images/me_uno.png') no-repeat 98px center;
+				a{ width: 100px; height: 21px; display: block;
+					span.me_uno{ width: 21px; height: 21px; margin-left: 30px;  display: block; }
+				}
+				&:hover{ background: url('images/me_uno_hover.png') no-repeat 98px center; }
+			}
+			&.share{ width: 120px; height: 22px; margin: 5px 5px 5px 0px; background-size: 20px; line-height: 20px;
+				a{ color: @rosa_obscuro; text-decoration: none; margin-right: 8px;
+					span{ color: @gris; margin-right: 10px; display: none; }
+				}
+				&:hover span{ display: inline; }
+				&.icon{
+					a{ width: 100px; height: 21px; display: block;
+						span.compartir{ width: 21px; height: 21px; margin-left: 30px;  display: block; }
+					}
+					&:hover{  };
+				}
+				&:hover{ background-size: 22px; font-weight: bold;
+					a{ color: #fff; }
+				}
+				&.compartir{ background: url('images/share.png') no-repeat 98px center;
+					&:hover{ background: url('images/share_hover.png') no-repeat 98px center; };
+				}
+				&.facebook{ background: url('images/fb.png') no-repeat 98px center;
+					&:hover{ background: url('images/fb_hover.png') no-repeat 98px center; };
+				}
+				&.twitter{ background: url('images/tw.png') no-repeat 98px center;
+					&:hover{ background: url('images/tw_hover.png') no-repeat 98px center; };
+				}
+				&.pinterest{ background: url('images/pin.png') no-repeat 98px center;
+					&:hover{ background: url('images/pin_hover.png') no-repeat 98px center; };
+				}
+				&.mail{ background: url('images/mail.png') no-repeat 98px center;
+					&:hover{ background: url('images/mail_hover.png') no-repeat 98px center; };
+				}
+
+			}
+		}
+	}
+
+}
+
+//---- GENERAL ----//
+
+html, body{ color: @gris; .pt_sans; }
+
+.container{ min-width: 900px; .position; background: url(images/conexiones.png) no-repeat center 1130px;}
+
+.pantalla{ width: 900px; height: 600px;  margin: auto; position: relative; border: 1px solid @gris_claro;
+	img{ width: 50%; height: auto; display: block; margin: 0 auto 30px auto; padding: 10px; }
+	p{ width: 80%; margin: 0 auto 10px auto; text-align: center;}
+	.ilustracion{ width: 721px; height: 562px; position: relative; z-index: -1; }
+	&.pantalla_1{ background: none; z-index: 1;
+		.logo{ width: 250px; height: auto; margin: auto; z-index: 9999; display: block; position: fixed; left: 50%; }
+		p{ width: 550px; position: relative; top: 350px; font-size: 20px; font-style: italic;}
+		.scroll_down { width: 70px; margin: auto; display: block; top: 350px; position: relative;
+			img{ width: 100%; height: auto; display: block;}
+		}
+	}
+	&.pantalla_2{
+		.ilustracion{ margin: auto; background: url('images/ilustracion_tip1.jpg'); }
+	}
+	&.pantalla_3{
+		.ilustracion{  background: url('images/ilustracion_tip2.jpg'); }
+	}
+	&.pantalla_4{
+		.ilustracion{ margin: 30px 0 0 230px; background: url('images/ilustracion_tip3.jpg');  }
+	}
+	&.pantalla_5{
+		.ilustracion{ margin: 0 0 0 -70px; background: url('images/ilustracion_tip4.jpg'); }
+	}
+	&.pantalla_6{
+		.ilustracion{ margin: 30px 0 0 230px; background: url('images/ilustracion_tip5.jpg');  }
+	}
+	&.pantalla_7{
+		.ilustracion{ margin: 0 0 0 -140px; background: url('images/ilustracion_tip6.jpg');  }
+	}
+	&.pantalla_8{
+		.ilustracion{ margin: 0 0 0 200px; background: url('images/ilustracion_tip7.jpg');  }
+	}
+	&.pantalla_9{
+		.ilustracion{ top: 100px; }
+	}
+
+	&.info{ .position; background: none;
+
+		.manual{ width: 100%; text-align: center; .pt_sans; text-transform: uppercase; color: #b47aa6; position: absolute; bottom: 10px; font-size: 20px;
+			a{ .pt_sans_bold; color: #709dd7; text-decoration: none;}
+		}
+		.logo_info{ width: 250px; position: relative; top: -550px;  }
+
+	}
+}
+
+.pantalla_para{ width: 900px; height: 300px; margin: auto; overflow: hidden; border-left: 1px solid @gris_claro; border-right: 1px solid @gris_claro;
+	.hero_moves{ position: relative; top: 95px; width: 100px; height: 100px;
+		p{ width: 100%; text-align: center; .politica_italic; position: absolute; top: 26px; font-size: 45px; z-index: 2; color: @rosa_obscuro; text-transform: uppercase; }
+		img{ width: 100%; height: auto; position: absolute; }
+	}
+	&.info{
+		.hero_moves{
+			p{font-size: 25px; top: 37px; left: -2px;}
+		}
+	}
+}
+
+.texto{.redondas; padding: 10px; position: absolute;
+	h4{ width: 100%; margin-bottom: 10px; color: @rosa_obscuro; .pt_sans_bold; text-transform: uppercase; font-size: 20px;}
+	p{ width: 100%; .pt_sans; text-align: left; font-size: 16px; color: @cafe; }
+	&.tip1{ width: 37%; bottom: 20px; left: 50px;}
+	&.tip2{ width: 29%; top: 121px; right: 22px;}
+	&.tip3{ width: 28%; bottom: 69px; left: 51px;}
+	&.tip4{ width: 28%; bottom: 210px; right: 22px;}
+	&.tip5{ width: 27%; bottom: 60px; left: 58px;}
+	&.tip6{ width: 28%; bottom: 70px; right: 24px;}
+	&.tip7{ width: 29%; bottom: 50px; left: 47px;}
+	&.tip8{ width: 24%; top: 20px; right: 38px;}
+}
+
+.footer{ width: 900px; margin: 20px auto; .position;
+	p{ width: 75%; margin: 0 4%; float: left; text-align: center;}
+	img{ width: 15%; float: right; }
+}
