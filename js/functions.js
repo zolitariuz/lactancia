@@ -14,7 +14,7 @@ $(function(){
 		half_width_logo_ch 	= left_width+30;
 
 	logo.attr('data-300', 'width: 250px; left:' + half_width_logo_g + 'px;');
-	logo.attr('data-900', 'width: 120px; left:' + left_width + 'px;');
+	logo.attr('data-800', 'width: 120px; left:' + left_width + 'px;');
 	logo.attr('data-6750', 'width: 120px; left:' + left_width + 'px;');
 	logo.attr('data-6900', 'width: 0px; left:' + left_width + 'px;');
 
@@ -95,7 +95,7 @@ $(function(){
 	$('.dia').on('click', function(e){
 		e.preventDefault();
 		dia = $(this).data('dia');
-		$.scrollTo( '#'+dia, 2000, {offset: -100 } );
+		$.scrollTo( '#'+dia, 2500, {offset: -100 } );
 	});
 
 	//ScrollTo Flechas
@@ -126,7 +126,7 @@ $(function(){
 		share_url,
 		mail_str;
 
-	$('#mail').click(function(e){
+	$('.open_mail').click(function(e){
 		e.preventDefault();
 
 		content = 'Amamantar es un esfuerzo que vale la pena. Éste es uno de los prácticos consejos que te ayudarán a disfrutar de una lactancia exitosa junto a tu bebé. Amamanta, hazlo por los dos. http://publicislead.com/lactancia/'
