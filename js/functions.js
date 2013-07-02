@@ -28,7 +28,6 @@ $(function(){
 			'right': 100
 		}, 500);
 
-		console.log(scroll);
 	});
 
 	//Nav
@@ -64,7 +63,6 @@ $(function(){
 	$('.dia').on('click', function(e){
 		e.preventDefault();
 		dia = $(this).data('dia');
-		console.log('#'+dia);
 		$.scrollTo( '#'+dia, 2000, {offset: -100 } );
 	});
 
@@ -73,15 +71,12 @@ $(function(){
 	var donde_estoy;
 	$('.flecha').on('click', function(){
 		donde_estoy = $(window).scrollTop()
-		console.log(donde_estoy);
 
 		if ( $(this).hasClass('up') ){
-			console.log('up');
 			navegacion_up();
 
 
 		} else if ( $(this).hasClass('down') ){
-			console.log('down');
 			navegacion_down();
 
 		}
@@ -109,6 +104,120 @@ $(function(){
 		}
 	});
 
+	//Mail
+	var content,
+		subject,
+		imagen,
+		share_url,
+		mail_str;
+
+	$('#mail').click(function(e){
+		e.preventDefault();
+
+		content = 'Amamantar es un esfuerzo que vale la pena. Éste es uno de los prácticos consejos que te ayudarán a disfrutar de una lactancia exitosa junto a tu bebé. Amamanta, hazlo por los dos. http://publicislead.com/lactancia/'
+
+		mail_str = "mailto:?subject=";
+		mail_str += "&body=" + content ;
+		location.href = mail_str;
+	});
+
+	//Pinterest
+	
+	$('#pinterest a').on('click', function(){
+		var href = '//pinterest.com/pin/create/button/',
+		url = 'http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F',
+		media = encodeURIComponent( contenido_share() ),
+		description = encodeURIComponent('Éste es uno de los consejos para disfrutar de una lactancia exitosa junto a tu bebé. Amamanta, hazlo por los dos'),
+		pinterest_url = href + '?url=' + url + '&media=' + media + '&description=' + description;
+
+		$(this).attr('href', pinterest_url );
+	});
+	
+	//Facebook
+	
+	
+	
+	$('#facebook').on('click', function(){
+	
+		donde_estoy = $(window).scrollTop();
+		
+		var link,
+			picture,
+			name,
+			caption;
+		
+		if ( donde_estoy < 600 ){
+
+			
+		} else if ( donde_estoy >= 600 && donde_estoy < 1500 ){
+			
+			link = 'link=http://publicislead.com/lactancia/#uno&';
+			picture = 'picture=http://publicislead.com/lactancia/share_img/tip2.jpg&';
+			name = 'name=' + encodeURIComponent('Tip 1') + '&';
+			caption = 'caption=' + encodeURIComponent('Tip 1') + '&';
+
+		} else if ( donde_estoy >= 1500 && donde_estoy < 2400 ){
+			
+			link = 'link=http://publicislead.com/lactancia/#uno&';
+			picture = 'picture=http://publicislead.com/lactancia/share_img/tip2.jpg&';
+			name = 'name=' + encodeURIComponent('Tip 2') + '&';
+			caption = 'caption=' + encodeURIComponent('Tip 2') + '&';
+
+		} else if ( donde_estoy >= 2400 && donde_estoy < 3300 ){
+			
+			link = 'link=http://publicislead.com/lactancia/#uno&';
+			picture = 'picture=http://publicislead.com/lactancia/share_img/tip2.jpg&';
+			name = 'name=' + encodeURIComponent('Tip 3') + '&';
+			caption = 'caption=' + encodeURIComponent('Tip 3') + '&';
+
+		} else if ( donde_estoy >= 3300 && donde_estoy < 4200 ){
+			
+			link = 'link=http://publicislead.com/lactancia/#uno&';
+			picture = 'picture=http://publicislead.com/lactancia/share_img/tip2.jpg&';
+			name = 'name=' + encodeURIComponent('Tip 4') + '&';
+			caption = 'caption=' + encodeURIComponent('Tip 4') + '&';
+
+		} else if ( donde_estoy >= 4200 && donde_estoy < 5100 ){
+			
+			link = 'link=http://publicislead.com/lactancia/#uno&';
+			picture = 'picture=http://publicislead.com/lactancia/share_img/tip2.jpg&';
+			name = 'name=' + encodeURIComponent('Tip 5') + '&';
+			caption = 'caption=' + encodeURIComponent('Tip 5') + '&';
+
+		} else if ( donde_estoy >= 5100 && donde_estoy < 6000 ){
+			
+			link = 'link=http://publicislead.com/lactancia/#uno&';
+			picture = 'picture=http://publicislead.com/lactancia/share_img/tip2.jpg&';
+			name = 'name=' + encodeURIComponent('Tip 6') + '&';
+			caption = 'caption=' + encodeURIComponent('Tip 6') + '&';
+
+		} else if ( donde_estoy >= 6000 && donde_estoy < 6900 ){
+			
+			link = 'link=http://publicislead.com/lactancia/#uno&';
+			picture = 'picture=http://publicislead.com/lactancia/share_img/tip2.jpg&';
+			name = 'name=' + encodeURIComponent('Tip 7') + '&';
+			caption = 'caption=' + encodeURIComponent('Tip 7') + '&';
+
+		} else if ( donde_estoy >= 6900 && donde_estoy < 7800 ){
+			
+			link = 'link=http://publicislead.com/lactancia/#uno&';
+			picture = 'picture=http://publicislead.com/lactancia/share_img/tip2.jpg&';
+			name = 'name=' + encodeURIComponent('Tip 1') + '&';
+			caption = 'caption=' + encodeURIComponent('Tip 1') + '&';
+
+		}
+		
+		var href = 'https://www.facebook.com/dialog/feed?';
+		var app_id = 'app_id=593365504028765&';
+		var description = 'description=' + encodeURIComponent('Amamantar es un esfuerzo que vale la pena. Éste es uno de los prácticos consejos que te ayudarán a disfrutar de una lactancia exitosa junto a tu bebé. Amamanta, hazlo por los dos.') + '&';
+		var redirect_uri = 'redirect_uri=http://publicislead.com/lactancia';
+		
+		$('#facebook a').attr('href', href + app_id + picture + name + caption + description + redirect_uri );
+		
+		location.href = href + app_id + picture + name + caption + description + redirect_uri;
+		
+	});
+	
 
 	function navegacion_up(){
 		donde_estoy = $(window).scrollTop();
@@ -134,7 +243,7 @@ $(function(){
 	}
 
 	function navegacion_down(){
-		donde_estoy = $(window).scrollTop()
+		donde_estoy = $(window).scrollTop();
 
 		if ( donde_estoy < 600 ){
 			$.scrollTo( '#uno', 2000, {offset: -100 } );
@@ -153,6 +262,49 @@ $(function(){
 		} else if ( donde_estoy >= 6000 && donde_estoy < 6900  ){
 			$.scrollTo( '#info', 2000, {offset: -100 } );
 		} else if ( donde_estoy >= 6900 && donde_estoy < 7800  ){
+		}
+	}
+
+	function contenido_share(){
+	
+		donde_estoy = $(window).scrollTop();
+
+		if ( donde_estoy < 600 ){
+
+			return  '';
+
+		} else if ( donde_estoy >= 600 && donde_estoy < 1500  ){
+
+			return 'http://publicislead.com/lactancia/share_img/tip1.jpg';
+
+		} else if ( donde_estoy >= 1500 && donde_estoy < 2400  ){
+
+			return 'http://publicislead.com/lactancia/share_img/tip2.jpg';
+
+		} else if ( donde_estoy >= 2400 && donde_estoy < 3300  ){
+
+			return 'http://publicislead.com/lactancia/share_img/tip3.jpg';
+
+		} else if ( donde_estoy >= 3300 && donde_estoy < 4200  ){
+
+			return 'http://publicislead.com/lactancia/share_img/tip4.jpg';
+
+		} else if ( donde_estoy >= 4200 && donde_estoy < 5100  ){
+
+			return 'http://publicislead.com/lactancia/share_img/tip5.jpg';
+
+		} else if ( donde_estoy >= 5100 && donde_estoy < 6000  ){
+
+			return 'http://publicislead.com/lactancia/share_img/tip6.jpg';
+
+		} else if ( donde_estoy >= 6000 && donde_estoy < 6900  ){
+
+			return 'http://publicislead.com/lactancia/share_img/tip7.jpg';
+
+		} else if ( donde_estoy >= 6900 && donde_estoy < 7800  ){
+
+			return '';
+
 		}
 	}
 

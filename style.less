@@ -70,15 +70,15 @@
 				a{ color: @rosa_obscuro; text-decoration: none; margin-right: 8px;
 					span{ color: @gris; margin-right: 10px; display: none; }
 				}
-				&:hover span{ display: inline; }
 				&.icon{
 					a{ width: 100px; height: 21px; display: block;
 						span.compartir{ width: 21px; height: 21px; margin-left: 30px;  display: block; }
 					}
-					&:hover{  };
+
 				}
-				&:hover{ background-size: 22px; font-weight: bold;
+				&:hover{ background-size: 22px; font-weight: bold; display: inline;
 					a{ color: #fff; }
+					span{ display: block; }
 				}
 				&.compartir{ background: url('images/share.png') no-repeat 98px center;
 					&:hover{ background: url('images/share_hover.png') no-repeat 98px center; };
@@ -86,11 +86,9 @@
 				&.facebook{ background: url('images/fb.png') no-repeat 98px center;
 					&:hover{ background: url('images/fb_hover.png') no-repeat 98px center; };
 				}
-				&.twitter{ background: url('images/tw.png') no-repeat 98px center;
-					&:hover{ background: url('images/tw_hover.png') no-repeat 98px center; };
-				}
-				&.pinterest{ background: url('images/pin.png') no-repeat 98px center;
-					&:hover{ background: url('images/pin_hover.png') no-repeat 98px center; };
+				&.twitter{ }
+				&.pinterest{
+					img{ margin-left: 80px; }
 				}
 				&.mail{ background: url('images/mail.png') no-repeat 98px center;
 					&:hover{ background: url('images/mail_hover.png') no-repeat 98px center; };

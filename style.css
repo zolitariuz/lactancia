@@ -119,9 +119,6 @@
   margin-right: 10px;
   display: none;
 }
-.nav ul li.share:hover span {
-  display: inline;
-}
 .nav ul li.share.icon a {
   width: 100px;
   height: 21px;
@@ -136,9 +133,13 @@
 .nav ul li.share:hover {
   background-size: 22px;
   font-weight: bold;
+  display: inline;
 }
 .nav ul li.share:hover a {
   color: #fff;
+}
+.nav ul li.share:hover span {
+  display: block;
 }
 .nav ul li.share.compartir {
   background: url('images/share.png') no-repeat 98px center;
@@ -152,17 +153,8 @@
 .nav ul li.share.facebook:hover {
   background: url('images/fb_hover.png') no-repeat 98px center;
 }
-.nav ul li.share.twitter {
-  background: url('images/tw.png') no-repeat 98px center;
-}
-.nav ul li.share.twitter:hover {
-  background: url('images/tw_hover.png') no-repeat 98px center;
-}
-.nav ul li.share.pinterest {
-  background: url('images/pin.png') no-repeat 98px center;
-}
-.nav ul li.share.pinterest:hover {
-  background: url('images/pin_hover.png') no-repeat 98px center;
+.nav ul li.share.pinterest img {
+  margin-left: 80px;
 }
 .nav ul li.share.mail {
   background: url('images/mail.png') no-repeat 98px center;
