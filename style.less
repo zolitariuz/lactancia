@@ -32,7 +32,7 @@
 .pt_sans_bold{ font-family: 'PT Sans Narrow', sans-serif; font-weight: 700; }
 .pt_sans{ font-family: 'PT Sans Narrow', sans-serif; font-weight: 400; }
 .politica_italic{ font-family: 'politica_italic', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
-.georgia{ font-family:Georgia, "Times New Roman", Times, serif; font-weight: light; }
+.georgia{ font-family:Georgia, "Times New Roman", Times, serif; }
 .position{ position: relative; overflow: hidden;}
 .redondas{
     -webkit-border-radius: 20px;
@@ -47,53 +47,23 @@
 
 //---- NAV ----//
 
-.nav{ position: fixed; z-index: 1000; right: -100px; top: 35%; .georgia; font-style: italic; text-align: right;
+.nav{ position: fixed; z-index: 1000; right: -100px; top: 25%; .georgia; font-style: italic; text-align: right;
 	ul{ list-style: none;
 		li{ cursor: pointer; margin-bottom: 5px;
 			&.dia{ width: 120px; height: 22px; margin: 5px 5px 5px 0px; background: url(images/tip.png) no-repeat 98px center; background-size: 20px; line-height: 20px;
 				a{ color: @rosa_obscuro; text-decoration: none; margin-right: 8px;
 					span{ color: @gris; margin-right: 10px; display: none; }
 				}
-				&:hover span{ display: inline; }
-				&:hover{ background: url(images/bg_azul.png) no-repeat 98px 0; background-size: 22px; font-weight: bold;
+				&:hover span, &.hovered span{ display: inline; }
+				&:hover, &.hovered{ background: url(images/bg_azul.png) no-repeat 98px 0; background-size: 22px; font-weight: bold;
 					a{ color: #fff; }
 				}
-
 			}
 			&.me_uno{ background: url('images/me_uno.png') no-repeat 98px center;
 				a{ width: 100px; height: 21px; display: block;
 					span.me_uno{ width: 21px; height: 21px; margin-left: 30px;  display: block; }
 				}
-				&:hover{ background: url('images/me_uno_hover.png') no-repeat 98px center; }
-			}
-			&.share{ width: 120px; height: 22px; margin: 5px 5px 5px 0px; background-size: 20px; line-height: 20px;
-				a{ color: @rosa_obscuro; text-decoration: none; margin-right: 8px;
-					span{ color: @gris; margin-right: 10px; display: none; }
-				}
-				&.icon{
-					a{ width: 100px; height: 21px; display: block;
-						span.compartir{ width: 21px; height: 21px; margin-left: 30px;  display: block; }
-					}
-
-				}
-				&:hover{ background-size: 22px; font-weight: bold; display: inline;
-					a{ color: #fff; }
-					span{ display: block; }
-				}
-				&.compartir{ background: url('images/share.png') no-repeat 98px center;
-					&:hover{ background: url('images/share_hover.png') no-repeat 98px center; };
-				}
-				&.facebook{ background: url('images/fb.png') no-repeat 98px center;
-					&:hover{ background: url('images/fb_hover.png') no-repeat 98px center; };
-				}
-				&.twitter{ }
-				&.pinterest{
-					img{ margin-left: 80px; }
-				}
-				&.mail{ background: url('images/mail.png') no-repeat 98px center;
-					&:hover{ background: url('images/mail_hover.png') no-repeat 98px center; };
-				}
-
+				&:hover, &.hovered{ background: url('images/me_uno_hover.png') no-repeat 98px center; }
 			}
 		}
 	}
@@ -104,7 +74,7 @@
 
 html, body{ color: @gris; .pt_sans; }
 
-.container{ min-width: 900px; .position; background: url(images/conexiones.png) no-repeat center 1130px;}
+.container{ min-width: 900px; .position; background: url(images/conexiones.png) no-repeat center 1170px;}
 
 .pantalla{ width: 900px; height: 600px;  margin: auto; position: relative;
 	img{ width: 50%; height: auto; display: block; margin: 0 auto 30px auto; padding: 10px; }
@@ -122,33 +92,58 @@ html, body{ color: @gris; .pt_sans; }
 	}
 	&.pantalla_3{
 		.ilustracion{  background: url('images/ilustracion_tip2.jpg'); }
+		.social{ left: 0;}
 	}
 	&.pantalla_4{
-		.ilustracion{ margin: 30px 0 0 230px; background: url('images/ilustracion_tip3.jpg');  }
+		.ilustracion{ margin: 30px 0 0 230px; background: url('images/ilustracion_tip3.jpg'); }
 	}
 	&.pantalla_5{
 		.ilustracion{ margin: 0 0 0 -70px; background: url('images/ilustracion_tip4.jpg'); }
+		.social{ left: 0;}
 	}
 	&.pantalla_6{
-		.ilustracion{ margin: 30px 0 0 230px; background: url('images/ilustracion_tip5.jpg');  }
+		.ilustracion{ margin: 30px 0 0 230px; background: url('images/ilustracion_tip5.jpg'); }
 	}
 	&.pantalla_7{
-		.ilustracion{ margin: 0 0 0 -140px; background: url('images/ilustracion_tip6.jpg');  }
+		.ilustracion{ margin: 0 0 0 -140px; background: url('images/ilustracion_tip6.jpg'); }
+		.social{ left: 0;}
 	}
 	&.pantalla_8{
-		.ilustracion{ margin: 0 0 0 200px; background: url('images/ilustracion_tip7.jpg');  }
+		.ilustracion{ margin: 0 0 0 200px; background: url('images/ilustracion_tip7.jpg'); }
 	}
 	&.pantalla_9{
 		.ilustracion{ top: 100px; }
+		.social{ left: 320px; bottom: 0px;}
 	}
 
 	&.info{ .position; background: none;
 
-		.manual{ width: 100%; text-align: center; .pt_sans; text-transform: uppercase; color: #b47aa6; position: absolute; bottom: 10px; font-size: 20px;
+		.manual{ width: 100%; text-align: center; .pt_sans; text-transform: uppercase; color: #b47aa6; position: absolute; bottom: 30px; font-size: 20px;
 			a{ .pt_sans_bold; color: #709dd7; text-decoration: none;}
 		}
 		.logo_info{ width: 250px; position: relative; top: -550px;  }
 
+	}
+	.social{ position: absolute; bottom: 20px; right: 20px;
+		.share{ height: 22px; margin: 5px 5px 5px 0px; background-size: 20px; line-height: 20px; float: left; .georgia; font-style: italic;
+			a{ height: 21px; display: block; color: @gris; text-decoration: none;
+				&:hover{ color: @rosa; }
+			}
+
+			&:hover{ background-size: 22px; font-weight: bold;
+				a{ color: @gris; }
+			}
+			&.facebook{ width: 88px; background: url('images/fb.png') no-repeat 65px center;
+				&:hover{ background: url('images/fb_hover.png') no-repeat 65px center; };
+			}
+			&.twitter{ width: 57px; }
+			&.pinterest{ width: 40px;
+				img{ width: auto; margin: 0; padding: 0; }
+			}
+			&.mail{ width: 62px; background: url('images/mail.png') no-repeat 40px center;
+				&:hover{ background: url('images/mail_hover.png') no-repeat 40px center; };
+			}
+		}
 	}
 }
 
@@ -167,12 +162,12 @@ html, body{ color: @gris; .pt_sans; }
 .texto{.redondas; padding: 10px; position: absolute;
 	h4{ width: 100%; margin-bottom: 10px; color: @rosa_obscuro; .pt_sans_bold; text-transform: uppercase; font-size: 20px;}
 	p{ width: 100%; .pt_sans; text-align: left; font-size: 16px; color: @cafe; }
-	&.tip1{ width: 37%; bottom: 20px; left: 50px;}
-	&.tip2{ width: 29%; top: 121px; right: 22px;}
-	&.tip3{ width: 28%; bottom: 69px; left: 51px;}
-	&.tip4{ width: 28%; bottom: 210px; right: 22px;}
-	&.tip5{ width: 27%; bottom: 90px; left: 58px;}
-	&.tip6{ width: 28%; bottom: 70px; right: 24px;}
+	&.tip1{ width: 37%; bottom: -30px; left: 50px;}
+	&.tip2{ width: 29%; top: 170px; right: 22px;}
+	&.tip3{ width: 28%; bottom: 60px; left: 51px;}
+	&.tip4{ width: 28%; bottom: 180px; right: 22px;}
+	&.tip5{ width: 27%; bottom: 60px; left: 58px;}
+	&.tip6{ width: 28%; bottom: 80px; right: 24px;}
 	&.tip7{ width: 29%; bottom: 50px; left: 47px;}
 	&.tip8{ width: 24%; top: 20px; right: 38px;}
 }
