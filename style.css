@@ -119,9 +119,6 @@
   margin-right: 10px;
   display: none;
 }
-.nav ul li.share:hover span {
-  display: inline;
-}
 .nav ul li.share.icon a {
   width: 100px;
   height: 21px;
@@ -136,9 +133,13 @@
 .nav ul li.share:hover {
   background-size: 22px;
   font-weight: bold;
+  display: inline;
 }
 .nav ul li.share:hover a {
   color: #fff;
+}
+.nav ul li.share:hover span {
+  display: block;
 }
 .nav ul li.share.compartir {
   background: url('images/share.png') no-repeat 98px center;
@@ -152,17 +153,8 @@
 .nav ul li.share.facebook:hover {
   background: url('images/fb_hover.png') no-repeat 98px center;
 }
-.nav ul li.share.twitter {
-  background: url('images/tw.png') no-repeat 98px center;
-}
-.nav ul li.share.twitter:hover {
-  background: url('images/tw_hover.png') no-repeat 98px center;
-}
-.nav ul li.share.pinterest {
-  background: url('images/pin.png') no-repeat 98px center;
-}
-.nav ul li.share.pinterest:hover {
-  background: url('images/pin_hover.png') no-repeat 98px center;
+.nav ul li.share.pinterest img {
+  margin-left: 80px;
 }
 .nav ul li.share.mail {
   background: url('images/mail.png') no-repeat 98px center;
@@ -187,7 +179,6 @@ body {
   height: 600px;
   margin: auto;
   position: relative;
-  border: 1px solid #d1d1d1;
 }
 .pantalla img {
   width: 50%;
@@ -297,12 +288,10 @@ body {
   top: -550px;
 }
 .pantalla_para {
-  width: 900px;
+  width: 100%;
   height: 300px;
   margin: auto;
   overflow: hidden;
-  border-left: 1px solid #d1d1d1;
-  border-right: 1px solid #d1d1d1;
 }
 .pantalla_para .hero_moves {
   position: relative;
@@ -377,7 +366,7 @@ body {
 }
 .texto.tip5 {
   width: 27%;
-  bottom: 60px;
+  bottom: 90px;
   left: 58px;
 }
 .texto.tip6 {

@@ -28,7 +28,6 @@ $(function(){
 			'right': 100
 		}, 500);
 
-		console.log(scroll);
 	});
 
 	//Nav
@@ -64,7 +63,6 @@ $(function(){
 	$('.dia').on('click', function(e){
 		e.preventDefault();
 		dia = $(this).data('dia');
-		console.log('#'+dia);
 		$.scrollTo( '#'+dia, 2000, {offset: -100 } );
 	});
 
@@ -73,15 +71,12 @@ $(function(){
 	var donde_estoy;
 	$('.flecha').on('click', function(){
 		donde_estoy = $(window).scrollTop()
-		console.log(donde_estoy);
 
 		if ( $(this).hasClass('up') ){
-			console.log('up');
 			navegacion_up();
 
 
 		} else if ( $(this).hasClass('down') ){
-			console.log('down');
 			navegacion_down();
 
 		}
@@ -109,6 +104,39 @@ $(function(){
 		}
 	});
 
+	//Mail
+	var content,
+		subject,
+		imagen,
+		share_url,
+		mail_str;
+
+	$('#mail').click(function(e){
+		e.preventDefault();
+
+		content = 'Amamantar es un esfuerzo que vale la pena. Éste es uno de los prácticos consejos que te ayudarán a disfrutar de una lactancia exitosa junto a tu bebé. Amamanta, hazlo por los dos. http://publicislead.com/lactancia/'
+
+		mail_str = "mailto:?subject=";
+		mail_str += "&body=" + content ;
+		location.href = mail_str;
+	});
+
+	//Pinterest
+	// href="//pinterest.com/pin/create/button/
+	// ?url=http%3A%2F%2Fwww.publicislead.com%lactancia
+	// &media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg
+	// &description=Éste es uno de los consejos para disfrutar de una lactancia exitosa junto a tu bebé. Amamanta, hazlo por los dos."
+
+	var href = '//pinterest.com/pin/create/button/',
+		url = 'http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F',
+		media = 'http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg',
+		description = encodeURIComponent('Éste es uno de los consejos para disfrutar de una lactancia exitosa junto a tu bebé. Amamanta, hazlo por los dos'),
+		pinterest_url = href + '?url=' + url + '&media=' + media + '&description=' + description;
+
+
+	$('#pinterest a').attr('href', pinterest_url );
+
+	console.log( 'pinteret_url: ' + pinterest_url );
 
 	function navegacion_up(){
 		donde_estoy = $(window).scrollTop();
@@ -153,6 +181,49 @@ $(function(){
 		} else if ( donde_estoy >= 6000 && donde_estoy < 6900  ){
 			$.scrollTo( '#info', 2000, {offset: -100 } );
 		} else if ( donde_estoy >= 6900 && donde_estoy < 7800  ){
+		}
+	}
+
+	function contenido_share(){
+		donde_estoy = $(window).scrollTop()
+
+		if ( donde_estoy < 600 ){
+
+			share_url = '';
+			media = '';
+
+		} else if ( donde_estoy >= 600 && donde_estoy < 1500  ){
+
+			share_url = '';
+
+		} else if ( donde_estoy >= 1500 && donde_estoy < 2400  ){
+
+			share_url = '';
+
+		} else if ( donde_estoy >= 2400 && donde_estoy < 3300  ){
+
+			share_url = '';
+
+		} else if ( donde_estoy >= 3300 && donde_estoy < 4200  ){
+
+			share_url = '';
+
+		} else if ( donde_estoy >= 4200 && donde_estoy < 5100  ){
+
+			share_url = '';
+
+		} else if ( donde_estoy >= 5100 && donde_estoy < 6000  ){
+
+			share_url = '';
+
+		} else if ( donde_estoy >= 6000 && donde_estoy < 6900  ){
+
+			share_url = '';
+
+		} else if ( donde_estoy >= 6900 && donde_estoy < 7800  ){
+
+			share_url = '';
+
 		}
 	}
 

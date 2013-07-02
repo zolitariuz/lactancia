@@ -1,15 +1,27 @@
 <!doctype html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <meta charset="UTF-8">
-    <title>Título</title>
+    <title>Semana de la Lactancia</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 
+    <!-- FACEBOOK -->
+
+
+
 </head>
 <body>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=593365504028765";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 	<div class="container">
 
@@ -42,20 +54,15 @@
 						<span class="facebook"></span>
 					</a>
 				</li>
-				<li class="share twitter icon">
-					<a href="#">
-						<span>twitter</span>
-						<span class="twitter"></span>
-					</a>
+				<li class="share twitter icon" id="twitter">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://publicislead.com/lactancia/" data-text="Éste es uno de los consejos para disfrutar de una lactancia exitosa junto a tu bebé. Amamanta, hazlo por los dos." data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 				</li>
-				<li class="share pinterest icon">
-					<a href="#">
-						<span>pinterest</span>
-						<span class="pinterest"></span>
-					</a>
+				<li class="share pinterest icon" id="pinterest">
+					<a href="" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
 				</li>
-				<li class="share mail icon">
-					<a href="#">
+				<li class="share mail icon" id="mail">
+					<a href="">
 						<span>mail</span>
 						<span class="mail"></span>
 					</a>
@@ -250,10 +257,14 @@
 		</div><!-- footer -->
 	</div><!-- container -->
 
+	<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
+
  	<script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/skrollr.js"></script>
     <script type="text/javascript" src="js/scrollTo.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
+
+
 
 </body>
 </html>
