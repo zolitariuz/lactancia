@@ -18,13 +18,11 @@ $(function(){
 	logo.attr('data-6750', 'width: 120px; left:' + left_width + 'px;');
 	logo.attr('data-6900', 'width: 0px; left:' + left_width + 'px;');
 
-	//Skroller
-	var s = skrollr.init();
+
+	var s;
 
 	//iPhone,iPad, etc…
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-		nav.hide();
-		$('.scroll_down').hide();
 
 		$(window).on('scroll', function(){
 			var scroll_movil = $(window).scrollTop();
@@ -36,6 +34,9 @@ $(function(){
 			}
 		});
 
+	} else {
+		//Skroller
+		var s = skrollr.init();
 	}
 
 	$(window).on('scroll', function(){

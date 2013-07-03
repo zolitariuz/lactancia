@@ -74,7 +74,7 @@
 
 html, body{ color: @gris; .pt_sans; }
 
-.container{ min-width: 900px; .position; background: url(images/conexiones.png) no-repeat center 1170px;}
+.container{ min-width: 900px; .position; background: url('images/conexiones.png') no-repeat center 1170px;}
 
 .pantalla{ width: 900px; height: 600px;  margin: auto; position: relative;
 	img{ width: 50%; height: auto; display: block; margin: 0 auto 30px auto; padding: 10px; }
@@ -82,6 +82,7 @@ html, body{ color: @gris; .pt_sans; }
 	.ilustracion{ width: 721px; height: 562px; position: relative; z-index: -1; }
 	&.pantalla_1{ background: none; z-index: 1;
 		.logo{ width: 250px; height: auto; margin: auto; z-index: 9999; display: block; position: fixed; left: 50%; }
+		.logo_devices{ display: none; }
 		p{ width: 550px; position: relative; top: 350px; font-size: 20px; font-style: italic;}
 		.scroll_down { width: 70px; margin: auto; display: block; top: 350px; position: relative;
 			img{ width: 100%; height: auto; display: block;}
@@ -175,4 +176,26 @@ html, body{ color: @gris; .pt_sans; }
 .footer{ width: 900px; margin: 20px auto; .position;
 	p{ width: 75%; margin: 0 4%; float: left; text-align: center;}
 	img{ width: 15%; float: right; }
+}
+
+
+//---- DEVICES ----//
+@media only screen and (max-device-width : 1024px){
+
+	.nav{ display: none; }
+
+	.pantalla.pantalla_1{
+		.logo{ display: none; }
+		.logo_devices{ width: 250px; margin: auto; display: block; }
+		p{ top: 0; }
+		.scroll_down { display: none; }
+	}
+
+	.pantalla_para{
+		.hero_moves{ margin: auto; }
+	}
+
+	.texto{ background: @rosa; .redondas;
+
+	}
 }

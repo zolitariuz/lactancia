@@ -114,7 +114,7 @@ body {
   min-width: 900px;
   position: relative;
   overflow: hidden;
-  background: url(images/conexiones.png) no-repeat center 1170px;
+  background: url('images/conexiones.png') no-repeat center 1170px;
 }
 .pantalla {
   width: 900px;
@@ -152,6 +152,9 @@ body {
   display: block;
   position: fixed;
   left: 50%;
+}
+.pantalla.pantalla_1 .logo_devices {
+  display: none;
 }
 .pantalla.pantalla_1 p {
   width: 550px;
@@ -408,4 +411,32 @@ body {
 .footer img {
   width: 15%;
   float: right;
+}
+@media only screen and (max-device-width: 1024px) {
+  .nav {
+    display: none;
+  }
+  .pantalla.pantalla_1 .logo {
+    display: none;
+  }
+  .pantalla.pantalla_1 .logo_devices {
+    width: 250px;
+    margin: auto;
+    display: block;
+  }
+  .pantalla.pantalla_1 p {
+    top: 0;
+  }
+  .pantalla.pantalla_1 .scroll_down {
+    display: none;
+  }
+  .pantalla_para .hero_moves {
+    margin: auto;
+  }
+  .texto {
+    background: #f1ddec;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
 }
