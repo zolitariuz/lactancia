@@ -21,6 +21,23 @@ $(function(){
 	//Skroller
 	var s = skrollr.init();
 
+	//iPhone,iPad, etc…
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+		nav.hide();
+		$('.scroll_down').hide();
+
+		$(window).on('scroll', function(){
+			var scroll_movil = $(window).scrollTop();
+
+			if (scroll_movil >= 600){
+				$('.logo_movil').fadeIn();
+			} else {
+				$('.logo_movil').fadeOut();
+			}
+		});
+
+	}
+
 	$(window).on('scroll', function(){
 		scroll = $(window).scrollTop();
 		//Nav
@@ -77,12 +94,12 @@ $(function(){
 	$(window).on('resize', function (){
 	// 	window.clearTimeout(doit)
 	// 	doit = setTimeout(set_nav_position, 400);
+	// 	left_width_nav		= left_width + 30;
+	// 	half_width_logo_ch 	= left_width+70;
 
 	 	left_width	 		= ($(window).width() - 900) / 2,
-	// 	left_width_nav		= left_width + 30;
 	 	half_width			= ($(window).width() / 2) - 135,
 	 	half_width_logo_g 	= half_width;
-	// 	half_width_logo_ch 	= left_width+70;
 
 	 	logo.attr('data-300', 'width: 250px; left:' + half_width_logo_g + 'px;');
 		logo.attr('data-900', 'width: 120px; left:' + left_width + 'px;');
